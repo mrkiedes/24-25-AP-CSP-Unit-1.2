@@ -1,9 +1,12 @@
 import turtle as trtl
 
+wn = trtl.Screen()
+wn.colormode(255)
 ex = trtl.Turtle()
 ex.speed(0)
 length = 200
-shaded_lines = 100
+shaded_lines = 20
+
 
 # Makes a square
 for sides in range(4):
@@ -11,7 +14,10 @@ for sides in range(4):
     ex.right(90)
 
 # Setting the color
-ex.color("purple")
+r = 91
+g = 11
+b = 247
+ex.pencolor(r,g,b)
 
 # Shade the box
 for shading in range(shaded_lines):
@@ -20,7 +26,12 @@ for shading in range(shaded_lines):
     ex.pendown()
     ex.forward(length)
     ex.backward(length)
+    if g < 245:
+        g += 10
+    else:
+        g = 11
+    ex.pencolor(r,g,b)
 
 
-wn = trtl.Screen()
+
 wn.mainloop()
